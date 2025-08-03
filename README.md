@@ -57,6 +57,8 @@ python app.py
 
 Go to http://127.0.0.1:5000
 
+```
+
 📊 Visualizations
 
 Top 10 Movie Genres: Shows the distribution of top genres.
@@ -74,7 +76,7 @@ Similarity Heatmap: Visualizes the similarity matrix for sample movies.
 
 ---
 
-## 👨‍💻 Author
+👨‍💻 Author
 
 **Anubhav Choudhary**  
 [LinkedIn](https://www.linkedin.com/in/anubhav-choudhary-35b8ab254/) | [GitHub](https://github.com/ANUBHAV0112)
