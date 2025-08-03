@@ -67,11 +67,11 @@ Similarity Heatmap: Visualizes the similarity matrix for sample movies.
 
 ---
 
-**Login & Signup Output**  
-![Screenshot](screenshot/login&signin%20output.png)
+**Plot**  
+![Screenshot](./SS/generate_genre_plot.png)
 
-**Gallery**  
-![Screenshot](screenshot/gallery.png)
+**Heatmap**  
+![Screenshot](./SS/heatmap.png)
 
 
 ---
