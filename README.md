@@ -18,6 +18,21 @@ The project includes:
 
 ## 📂 Project Structure
 
+📦 Movie-Recommender-System
+┣ 📂 static
+┃ ┣ 📄 genres_plot.png
+┃ ┣ 📄 heatmap.png
+┃ ┣ 📄 style.css
+┣ 📂 templates
+┃ ┣ 📄 index.html
+┃ ┣ 📄 recommend.html
+┣ 📄 app.py
+┣ 📄 movies.pkl
+┣ 📄 similarity.pkl
+┣ 📄 tmdb_5000_credits.csv
+┣ 📄 tmdb_5000_movies.csv
+┣ 📄 requirements.txt
+┣ 📄 README.md
 
 
 ---
@@ -27,35 +42,26 @@ The project includes:
 1️⃣ **Clone the repo:**
 ```bash
 git clone https://github.com/ANUBHAV0112/Movie-Recommender-System.git
-cd movie-recommender
+cd Movie-Recommender-System
 
-2️⃣ **Install dependencies:**
+
+2️⃣ Install dependencies:
 
 pip install -r requirements.txt
 
-3️⃣ **Run the Flask app:**
+3️⃣ Run the Flask app:
 
-4️⃣ **Open your browser at http://127.0.0.1:5000**
+python app.py
 
----
+4️⃣ Open your browser:
+
+Go to http://127.0.0.1:5000
 
 📊 Visualizations
+
 Top 10 Movie Genres: Shows the distribution of top genres.
 
 Similarity Heatmap: Visualizes the similarity matrix for sample movies.
-
----
-
-✨ Key Files
-movies.pkl – Preprocessed DataFrame for fast loading.
-
-similarity.pkl – Precomputed cosine similarity matrix.
-
-app.py – Flask server.
-
-index.html – Input form and graphs.
-
-recommend.html – Display recommendations.
 
 ---
 
@@ -64,6 +70,7 @@ recommend.html – Display recommendations.
 
 **Gallery**  
 ![Screenshot](screenshot/gallery.png)
+
 
 ---
 
