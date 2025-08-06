@@ -1,20 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Movie Recommender</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Movie Recommender System</h1>
-    <form action="/recommend" method="post">
-        <label for="movie_name">Enter a Movie Name:</label><br><br>
-        <input type="text" id="movie_name" name="movie_name" placeholder="Avatar" required>
-        <button type="submit">Recommend</button>
-    </form>
-    <h2>Top 10 Genres</h2>
-<img src="{{ url_for('static', filename='genres_plot.png') }}" alt="Top Genres">
-<h2>Similarity Heatmap</h2>
-<img src="{{ url_for('static', filename='heatmap.png') }}" alt="Similarity Heatmap">
+
+<div class="container">
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="{{ url_for('static', filename='trending/main.jpg') }}" alt="Featured Movies">
+        <h1>Find <span class="highlight">Movies</span> You'll Enjoy<br>Without The Hassle.</h1>
+
+        <form action="/recommend" method="post" class="search-bar">
+            <input type="text" name="movie_name" list="movie_suggestions" placeholder="Search thousands of movies..." required>
+            <datalist id="movie_suggestions">
+                {% for movie in movies %}
+                  <option value="{{ movie }}">
+                {% endfor %}
+            </datalist>
+            <button type="submit">🔍</button>
+        </form>
+        <p class="subtitle">Get personalized movie recommendations in seconds.</p>
+
+    </div>
+
+    <!-- Trending Section -->
+    <h2>Trending Movies</h2>
+<div class="trending">
+    {% for movie in ["taken.jpeg", "ENDGAME.jpeg", "squid_game.jpeg", "wanda.jpg", "black_panther.jpg"] %}
+    <div class="trend-card">
+        <span class="rank">{{ loop.index }}</span>
+        <img src="{{ url_for('static', filename='trending/' + movie) }}" alt="{{ movie }}">
+    </div>
+    {% endfor %}
+</div>
+
+    <!-- Charts Section -->
+<hr>
+<h2 style="text-align: center; margin-top: 40px;">📊 Movie Data Insights</h2>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 40px; margin-top: 30px;">
+
+    <div style="text-align: center;">
+        <h3>Top 10 Genres</h3>
+        <img src="{{ url_for('static', filename='genres_plot.png') }}" alt="Top Genres" style="width: 80%; max-width: 700px;">
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Similarity Heatmap</h3>
+        <img src="{{ url_for('static', filename='heatmap.png') }}" alt="Similarity Heatmap" style="width: 80%; max-width: 700px;">
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Top 10 Directors (Pie)</h3>
+        <img src="{{ url_for('static', filename='directors_pie.png') }}" alt="Directors Pie" style="width: 400px; height: auto;">
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Movies Released Over Time</h3>
+        <img src="{{ url_for('static', filename='release_histogram.png') }}" alt="Release Histogram" style="width: 80%; max-width: 700px;">
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Most Common Keywords (WordCloud)</h3>
+        <img src="{{ url_for('static', filename='keywords_wordcloud.png') }}" alt="Wordcloud" style="width: 80%; max-width: 700px;">
+    </div>
+
+</div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+       <h1> Made by Anubhav Choudhary | © 2025 Movie Recommender</h1>
+    </footer>
+
+</div>
 
 </body>
 </html>

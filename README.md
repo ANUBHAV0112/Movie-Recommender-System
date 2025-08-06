@@ -1,6 +1,6 @@
 # 🎬 Movie Recommender System
 
-This is a simple **Content-Based Movie Recommender System** built with **Flask**, **Pandas**, **Scikit-learn**, and **NLP techniques**.
+This is a simple content-based movie recommender system built using **Python**, **Flask**, **Scikit-learn**, **NLP**, and **TMDB API** for fetching movie posters dynamically.
 
 It uses TMDB 5000 movies and credits data to recommend similar movies based on:
 - Genres
@@ -15,6 +15,35 @@ The project includes:
 - Genre distribution and similarity matrix visualized with Matplotlib & Seaborn
 
 ---
+
+---
+
+## 📡 How We Use the TMDB API
+
+This project uses **[The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)** to fetch **high-quality movie posters** for each recommended movie.
+
+**Key points:**
+
+- When a user searches for a movie, the backend calls TMDB’s **Search Movie API** endpoint:
+
+---
+
+- If no poster is found, a fallback placeholder image is shown instead.
+
+---
+
+## 🔑 API Key Management
+
+- This project requires a free TMDB developer API key.
+- The key is **stored securely in a `.env` file** and loaded using `python-dotenv`.
+- **Never commit your API key** to version control.
+
+Example `.env`:
+
+TMDB_API_KEY=YOUR_ACTUAL_API_KEY_HERE
+
+---
+
 
 ## 📂 Project Structure
 
@@ -67,11 +96,16 @@ Similarity Heatmap: Visualizes the similarity matrix for sample movies.
 
 ---
 
-**Plot**  
-![Screenshot](SS/generate_genre_plot.png)
+**Front Page**
+![Screenshot](SS/Front_page.png)
 
-**Heatmap**  
-![Screenshot](SS/heatmap.png)
+---
+
+**Plot**  
+![Screenshot](SS/Footer_Plot.png)
+
+**Recommend Page**  
+![Screenshot](SS/recommend_page.png)
 
 
 ---

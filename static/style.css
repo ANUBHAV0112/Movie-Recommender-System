@@ -1,19 +1,146 @@
 body {
-  font-family: Arial, sans-serif;
-  padding: 40px;
-  background: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
 }
 
 h1, h2 {
-  color: #333;
+  text-align: center;
+  color: #ffffff;
+  margin: 40px 0 20px;
 }
 
-form {
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero img {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 30px;
 }
 
+.highlight {
+  color: #b76df1;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-bar input[type="text"] {
+  width: 50%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 12px 20px;
+  background-color: #b76df1;
+  color: white;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #9f4ee2;
+}
+
+.trending {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.trend-card {
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.trend-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.trend-card img {
+  width: 140px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.rank {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: #b76df1;
+  color: white;
+  font-size: 1.2rem;
+  padding: 5px 12px;
+  border-radius: 50%;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
 img {
-  max-width: 700px;
-  border: 2px solid #ccc;
-  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .trend-card img {
+    width: 100px;
+    height: auto;
+  }
 }

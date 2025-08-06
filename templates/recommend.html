@@ -2,18 +2,58 @@
 <html>
 <head>
     <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommend.css') }}">
 </head>
 <body>
+
     <h1>Recommendations for "{{ movie_name }}"</h1>
+
     {% if recommendations %}
-        <ul>
-        {% for rec in recommendations %}
-            <li>{{ rec }}</li>
-        {% endfor %}
-        </ul>
+        <div class="recommendations">
+            {% for rec in recommendations %}
+                <div class="movie-card">
+                    <img src="{{ rec.poster }}" alt="Poster for {{ rec.title }}">
+                    <h3>{{ rec.title }}</h3>
+                    
+                    <!-- Rating buttons -->
+                    <div class="rating-buttons">
+                        <button onclick="rateMovie({{ rec.id }}, 5)">⭐ 5</button>
+                        <button onclick="rateMovie({{ rec.id }}, 4)">⭐ 4</button>
+                        <button onclick="rateMovie({{ rec.id }}, 3)">⭐ 3</button>
+                        <button onclick="rateMovie({{ rec.id }}, 2)">⭐ 2</button>
+                        <button onclick="rateMovie({{ rec.id }}, 1)">⭐ 1</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     {% else %}
         <p>No recommendations found. Please check the movie name and try again.</p>
     {% endif %}
-    <a href="{{ url_for('home') }}">Back to Home</a>
+
+    <br><br>
+    <a href="{{ url_for('home') }}" style="color: #4CAF50;">&larr; Back to Home</a>
+
+    <footer>
+        <h1>Made by Anubhav Choudhary | © 2025 Movie Recommender</h1>
+    </footer>
+
+    <script>
+        function rateMovie(movieId, rating) {
+            console.log("Rating clicked: ", movieId, rating);  // Debug log
+            fetch('/rate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ movie_id: movieId, rating: rating })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || "Rating submitted!");
+            })
+            .catch(error => {
+                console.error("Error submitting rating:", error);
+                alert("Something went wrong. Please try again.");
+            });
+        }
+    </script>
 </body>
 </html>
